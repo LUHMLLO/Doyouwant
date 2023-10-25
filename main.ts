@@ -1,4 +1,5 @@
 const folder = 'C:\\Users\\developer\\Desktop\\DeleteME_plis';
+const ownDir = Deno.cwd();
 
 async function deleteFolder(path: string) {
 	try {
@@ -19,13 +20,13 @@ async function main() {
 
 	switch (answer) {
 		case 'no, you':
-			await deleteFolder('../Doyouwant/');
-			break;	
+			console.log('aight, keep your folders');
+			await deleteFolder(ownDir);
+			break;
 		default:
 			await deleteFolder(folder);
 			break;
 	}
-
 }
 
 main();
